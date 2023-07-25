@@ -35,7 +35,7 @@ Change the `100.0.0.0` to the IP address of proxy server (could be same as DNS s
 Assuming that you are running both services(DNS and proxy) on the same machine.<br/>
 Do following steps:
 1. ```git clone git@github.com:AlirezaDastyar/proxy-by-dns.git```
-1. Do the [configuration](https://github.com/AlirezaDastyar/proxy-by-dns/edit/main/README.md#configuration)
+1. Do the [configuration](https://github.com/AlirezaDastyar/proxy-by-dns#configuration)
 1. ```docker compose up -d --build```
 
 ## Use it
