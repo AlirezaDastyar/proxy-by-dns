@@ -1,0 +1,27 @@
+version: '3'
+services:
+  dns:
+    build: 
+      context: .
+      dockerfile: ./dnsmasq/Dockerfile
+    # user: root  
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+    volumes:
+      - ./dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
+    restart: unless-stopped
+  proxy:
+    image: nginx:1.25.1-alpine3.17-slim
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    restart: unless-stopped
