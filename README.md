@@ -33,14 +33,13 @@ Change the `100.0.0.0` to the IP address of proxy server (could be same as DNS s
 
 ## Run it
 Assuming that you are running both services(DNS and proxy) on the same machine.<br/>
+Do following steps:
 1. ```git clone git@github.com:AlirezaDastyar/proxy-by-dns.git```
-<br/>
-1. Do the configuration
-<br/>
+1. Do the [configuration](https://github.com/AlirezaDastyar/proxy-by-dns/edit/main/README.md#configuration)
 1. ```docker compose up -d --build```
 
 ## Use it
 In order to use it just set the ip address of the DNS server as you'r network DNS. 
 ## Troubleshoot 
 It is known to fail to run `dnsmasq` in some environments, exiting with `Permission denied` error.<br> 
-If that happens try to uncomment the `user: root` in [`docker-compose,yml`](https://github.com/AlirezaDastyar/proxy-by-dns/blob/main/docker-compose.yml#L7) file as a work around while is not a good practice.
+If that happens try to uncomment the `user: root` in [`docker-compose.yml`](https://github.com/AlirezaDastyar/proxy-by-dns/blob/main/docker-compose.yml#L7) file as a work around while is not a good practice.
