@@ -25,7 +25,7 @@ Dealing with TLS might not look a straight forward thing.<br/>
 But NO its not a man-in-the-middle and no TLS decryption happens and the destination server name is found using SNI.<br/>
 
 ## Configuration
-The only configuration that is needed is setting the IP address of the proxy server in the [`dnsmasq.conf`]() file.
+The only configuration that is needed is setting the IP address of the proxy server in the [`dnsmasq.conf`](https://github.com/AlirezaDastyar/proxy-by-dns/blob/main/dnsmasq/dnsmasq.conf#L10) file.
 ```properties
 address=/#/100.0.0.0
 ```
@@ -43,4 +43,4 @@ Assuming that you are running both services(DNS and proxy) on the same machine.<
 In order to use it just set the ip address of the DNS server as you'r network DNS. 
 ## Troubleshoot 
 It is known to fail to run `dnsmasq` in some environments, exiting with `Permission denied` error.<br> 
-If that happens try to uncomment the `user: root` in docker compose as a work around while is not a good practice.
+If that happens try to uncomment the `user: root` in [`docker-compose,yml`](https://github.com/AlirezaDastyar/proxy-by-dns/blob/main/docker-compose.yml#L7) file as a work around while is not a good practice.
